@@ -21,7 +21,7 @@ export function NaverMapLoader({ children }: { children: React.ReactNode }) {
     }
 
     const script = document.createElement("script")
-    script.src = `https://openapi.map.naver.com/openapi/v3/maps.js?ncpClientId=${clientId}`
+    script.src = `https://openapi.map.naver.com/openapi/v3/maps.js?ncpKeyId=${clientId}`
     script.async = true
     script.onload = () => {
       console.log("[v0] Naver Maps API loaded successfully")

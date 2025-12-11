@@ -6,6 +6,7 @@ import { PropertyMap } from "@/components/property-map"
 import { PropertyList } from "@/components/property-list"
 import { AddPropertyDialog } from "@/components/add-property-dialog"
 import { PropertyDetailDialog } from "@/components/property-detail-dialog"
+import { NaverMapLoader } from "@/components/naver-map-loader"
 import { Input } from "@/components/ui/input"
 
 const initialProperties: Property[] = [
@@ -156,11 +157,13 @@ export default function PropertyManagementPage() {
                 </span>
               </div>
               <div className="h-[600px]">
-                <PropertyMap
-                  properties={filteredProperties}
-                  onPropertyClick={handleMapMarkerClick}
-                  selectedPropertyId={selectedPropertyId}
-                />
+                <NaverMapLoader>
+                  <PropertyMap
+                    properties={filteredProperties}
+                    onPropertyClick={handleMapMarkerClick}
+                    selectedPropertyId={selectedPropertyId}
+                  />
+                </NaverMapLoader>
               </div>
             </div>
           </div>
